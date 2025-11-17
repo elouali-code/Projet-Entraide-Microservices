@@ -1,0 +1,18 @@
+# Fichiers compilés Java/Maven
+/target/
+*.class
+*.jar
+*.war
+
+# Fichiers de Log
+*.log
+
+# Fichiers Eclipse/IDE
+.project
+.classpath
+.settings/
+.DS_Store
+
+# Fichiers de configuration IntelliJ (si utilisés)
+.idea/
+*.iml
