@@ -1,4 +1,4 @@
-# Projet d'Entraide Intelligente (Architecture Microservices - TP8)
+# Projet d'Entraide Intelligente (Architecture Microservices )
 
 Ce projet implémente une application d'entraide étudiante en utilisant une architecture microservices (Spring Boot) et une base de données MySQL.
 
