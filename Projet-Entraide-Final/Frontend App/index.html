@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSA Entraide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Style général */
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        header h1 { color: #0056b3; margin: 0; }
+        .container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 25px; }
+        .card h2 { color: #007bff; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: 600; font-size: 0.9em; }
+        input[type="text"], input[type="email"], input[type="number"], input[type="datetime-local"], textarea {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; 
+        }
+        button { background-color: #007bff; color: white; border: none; padding: 12px 15px; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease; }
+        button:hover { background-color: #0056b3; }
+        button i { margin-right: 8px; }
+        #results-area { grid-column: 1 / -1; margin-top: 20px; }
+        .message { padding: 15px; border-radius: 5px; font-weight: 500; display: none; }
+        .message.success { background-color: #d4edda; color: #155724; }
+        .message.error { background-color: #f8d7da; color: #721c24; }
+        #recommendations-list { list-style: none; padding-left: 0; }
+        #recommendations-list li { background: #fff; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+        #review { grid-column: 1 / span 2; } /* Carte d'avis prend toute la largeur */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-university"></i> INSA Entraide Intelligente</h1>
+    </header>
+
+    <div id="results-area">
+        <div id="message" class="message"></div>
+    </div>
+
+    <main class="container">
+
+        <section id="inscription" class="card">
+            <h2><i class="fas fa-user-plus"></i> 1. Inscription Étudiant</h2>
+            <form id="inscriptionForm">
+                <label for="nom">Nom:</label><input type="text" id="nom" required>
+                <label for="prenom">Prénom:</label><input type="text" id="prenom" required>
+                <label for="email">Email:</label><input type="email" id="email" required>
+                <label for="etablissement">Établissement:</label><input type="text" id="etablissement" value="INSA" required>
+                <label for="filiere">Filière:</label><input type="text" id="filiere" required>
+                <label for="competences">Compétences (ex: java,sql):</label><input type="text" id="competences" required>
+                <label for="disponibilites">Disponibilités (ex: Lundi 14h-16h):</label><input type="text" id="disponibilites">
+                <button type="submit"><i class="fas fa-paper-plane"></i> S'inscrire</button>
+            </form>
+        </section>
+
+        <section id="demande" class="card">
+            <h2><i class="fas fa-file-alt"></i> 2. Publier une Demande</h2>
+            <form id="demandeForm">
+                <label for="demandeId">Votre ID Étudiant (Ex: 4):</label><input type="number" id="demandeId" required>
+                <label for="titre">Titre du besoin:</label><input type="text" id="titre" required>
+                <label for="motsCles">Mots-clés (ex: java,jpa):</label><input type="text" id="motsCles" required>
+                <label for="description">Description:</label><textarea id="description" required></textarea>
+                <label for="dateSouhaitee">Date souhaitée:</label><input type="datetime-local" id="dateSouhaitee">
+                <button type="submit"><i class="fas fa-plus-circle"></i> Publier</button>
+            </form>
+        </section>
+
+        <section id="recherche" class="card">
+            <h2><i class="fas fa-search"></i> 3. Trouver des Aidants</h2>
+            <form id="recoForm">
+                <label for="recoKeywords">Mots-clés pour la recherche:</label><input type="text" id="recoKeywords" required>
+                <button type="submit"><i class="fas fa-search"></i> Rechercher</button>
+            </form>
+        </section>
+        
+        <section class="card" style="grid-column: 1 / -1;">
+            <h2>Résultats</h2>
+            <ul id="recommendations-list"></ul>
+        </section>
+        
+        <section id="review" class="card">
+            <h2><i class="fas fa-star"></i> 4. Soumettre un Avis (Exigence Finale)</h2>
+            <form id="reviewForm">
+                <label for="helperId">ID de l'Aidant à noter:</label>
+                <input type="number" id="helperId" required>
+                <label for="rating">Note (de 1 à 5):</label>
+                <input type="number" id="rating" min="1" max="5" required>
+                <button type="submit"><i class="fas fa-check"></i> Noter l'Aidant</button>
+            </form>
+        </section>
+
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
