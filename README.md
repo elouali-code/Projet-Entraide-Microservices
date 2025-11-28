@@ -24,4 +24,4 @@ L'application est décomposée en 3 microservices principaux et un frontend :
 2.  Lancez `UserApplication.java` (Port 8080).
 3.  Lancez `RequestApplication.java` (Port 8081).
 4.  Lancez `RecommendationApplication.java` (Port 8082).
-5.  Ouvrez le fichier `index.html` (du dossier `MonFrontend`) dans un navigateur.
+5.  Ouvrez le fichier `index.html` (du dossier `Frontend`) dans un navigateur.
