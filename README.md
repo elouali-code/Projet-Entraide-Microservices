@@ -11,11 +11,11 @@ L'application est décomposée en 3 microservices principaux et un frontend :
 * **RecommendationService (Port 8082)** : Gère la logique de recommandation. Appelle `UserService` pour trouver les aidants par compétences et gère la soumission des avis.
 * **Frontend (HTML/JS/CSS)** : Interface utilisateur unique qui consomme les 3 microservices.
 
-## 2. Configuration de la Base de Données (INSA)
+## 2. Configuration de la Base de Données 
 
 * **Serveur :** `srv-bdens.insa-toulouse.fr`
 * **Login :** `projet_gei_068`
-* **Mot de passe :** `fuoTh1oa`
+* **Mot de passe :** `**********`
 * **BDD (unique) :** `projet_gei_068` (Les tables sont créées automatiquement par Hibernate).
 
 ## 3. Comment Lancer le Projet
